@@ -1,5 +1,7 @@
 import random as rng 
 import Barbarian
+import Bard
+import Cleric
 
 def RollClassNotWeighted():
     roll = rng.randint(1,12)
@@ -38,10 +40,10 @@ def CheckClass(cc):
         result = Barbarian.BarbarianTables(rolls)
         print(result)
     elif cc == 'Bard':
-        ##Bard()
+        result = Bard.BardTables(rolls)
         print(result)
     elif cc == 'Cleric':
-        ##Cleric()
+        result = Cleric.ClericTables(rolls)
         print(result)
     elif cc == 'Druid':
         ##Druid()

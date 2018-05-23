@@ -1,17 +1,20 @@
 import LifeEvents
 import Supplementals
 import Origins
+import CharClass
+
+linebreak = '\n'
+blankSpace = ' '
 
 class CharBuild():
     """docstring for main"""
-    def __init__(self, arg):
+    def __init__(self):
         super(CharBuild, self).__init__()
-        self.arg = arg
         
     def Build(self):
         ## Roll Race
         ## Roll Class
-        self.RunBuilder('human', 'monk')
+        self.RunBuilder('human', 'Cleric')
 
     def BuildGiven(self, race, clas):
         self.RunBuilder(race, clas)
@@ -20,11 +23,12 @@ class CharBuild():
         ## Race Choose
 
         ## Class Choose
-
+        CharClass.CheckClass(clas)
         ## Origins
-        parent = Origins.Parents('human')
+        parent = Origins.Parents(race)
         parent.KnownParents()
         Origins.Birthplace()
+        print(blankSpace)
         ## Life Events
         ## Generates an age range, doesn't take in an age
         LifeEvents.AgeRange()
