@@ -4,8 +4,9 @@ import Origins
 
 class CharBuild():
     """docstring for main"""
-    def __init__(self):
+    def __init__(self, arg):
         super(CharBuild, self).__init__()
+        self.arg = arg
         
     def Build(self):
         ## Roll Race
