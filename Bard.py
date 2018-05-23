@@ -4,6 +4,9 @@ lineBreak = '\n'
 blankSpace = ' '
 def BardTables(rolls):
     result = 'You are a bard.' + lineBreak
+    
+    trainRoll = rng.randint(1,6)
+    result += (ClassTraining(trainRoll) + lineBreak)
 
     result += 'Your defining work, spoken about for years. Perhaps a work in progress, or a staple of your performance. ' 
     result += (DefiningWork(roll[0]) + lineBreak)
@@ -57,3 +60,14 @@ def Embarrassments(roll):
     emb += ['The time on stage when your wig caught fire and you threw it down--which set fire to the stage.']
     emb += ['When you sat on your lute by mistake during the final stanza of \"Starlight Serenade\".']
     return TableHelper.dSixTable(emb, roll)
+
+def ClassTraining(roll):
+    emb = []
+    emb += ['you awakened your latent bardic abilities through trial and error.']
+    emb += ['you were a gifted performer and attracted the attention of a master bard who schooled you in the old techniques.']
+    emb += ['you joined a loose society of scholars and orators to learn new techniques of performance and magic.']
+    emb += ['you felt a calling to recount the deeds of champions and heroes, to bring them alive in song and story.']
+    emb += ['you joined one of the great colleges to learn old lore, the secrets of magic, and the art of performance.']
+    emb += ['you picked up a musical instrument one day and instantly discovered that you could play it.']
+    result = 'You became a bard because ' + TableHelper.dSixTable(emb, roll) + lineBreak
+    return result
