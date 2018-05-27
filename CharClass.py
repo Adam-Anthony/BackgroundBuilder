@@ -3,6 +3,10 @@ import Barbarian
 import Bard
 import Cleric
 
+import Sorcerer
+import Warlock
+import Wizard
+
 def RollClassNotWeighted():
     roll = rng.randint(1,12)
     characterClass = ''
@@ -60,12 +64,15 @@ def CheckClass(cc):
     elif cc == 'Ranger':
         ##Ranger()
         print(result)
+    elif cc == 'Rogue':
+        ##Rogue()
+        print(result)
     elif cc == 'Sorcerer':
-        ##Sorcerer()
+        result = Sorcerer.SorcererTables(rolls)
         print(result)
     elif cc == 'Warlock':
-        ##Warlock()
+        result = Warlock.WarlockTables(rolls)
         print(result)
     elif cc == 'Wizard':
-        ##Wizard()
+        result = Wizard.WizardTables(rolls)
         print(result)
