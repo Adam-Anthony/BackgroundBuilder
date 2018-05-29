@@ -1,3 +1,4 @@
+## Preamble finished
 import random as rng
 import TableHelper
 lineBreak = '\n'
@@ -9,13 +10,13 @@ def BardTables(rolls):
     result += (ClassTraining(trainRoll) + lineBreak)
 
     result += 'Your defining work, spoken about for years. Perhaps a work in progress, or a staple of your performance. ' 
-    result += (DefiningWork(roll[0]) + lineBreak)
+    result += (DefiningWork(rolls[0]) + lineBreak)
 
     result += 'Any bard knows an instrument\'s entertainment value is as important as the music it plays. It might not be your only instrument, but it\'s a star. '
-    result += (Instrument(roll[1]) + lineBreak)
+    result += (Instrument(rolls[1]) + lineBreak)
 
     result += 'Almost every bard has suffered at least one bad experience in front of an audience. '
-    result += (Embarrassments(roll[2]) + lineBreak)
+    result += (Embarrassments(rolls[2]) + lineBreak)
 
     return result
 

@@ -1,3 +1,4 @@
+## Preamble not finished
 import random as rng
 import TableHelper
 lineBreak = '\n'
@@ -13,6 +14,7 @@ def WarlockTables(rolls):
     result += (PatronAttitudes(rolls[0]) + lineBreak)
 
     ## Special Terms
+    result += 'The terms of the pact include special terms.' + blankSpace
     result += (SpecialTerms(rolls[1]) + lineBreak)
 
     ##Binding Mark

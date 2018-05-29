@@ -3,6 +3,14 @@ import Barbarian
 import Bard
 import Cleric
 
+import Druid
+import Fighter
+import Monk
+
+import Paladin
+import Ranger
+import Rogue
+
 import Sorcerer
 import Warlock
 import Wizard
@@ -50,22 +58,22 @@ def CheckClass(cc):
         result = Cleric.ClericTables(rolls)
         print(result)
     elif cc == 'Druid':
-        ##Druid()
+        result = Druid.DruidTables(rolls)
         print(result)
     elif cc == 'Fighter':
-        ##Fighter()
+        result = Fighter.FighterTables(rolls)
         print(result)
     elif cc == 'Monk':
-        ##Monk()
+        result = Monk.MonkTables(rolls)
         print(result)
     elif cc == 'Paladin':
-        ##Paladin()
+        result = Paladin.PaladinTables(rolls)
         print(result)
     elif cc == 'Ranger':
-        ##Ranger()
+        result = Ranger.RangerTables(rolls)
         print(result)
     elif cc == 'Rogue':
-        ##Rogue()
+        result = Rogue.RogueTables(rolls)
         print(result)
     elif cc == 'Sorcerer':
         result = Sorcerer.SorcererTables(rolls)

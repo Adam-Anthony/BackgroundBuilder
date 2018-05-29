@@ -1,3 +1,4 @@
+## Preamble is not finished
 import random as rng
 import TableHelper
 lineBreak = '\n'
@@ -16,6 +17,7 @@ def SorcererTables(rolls):
 	result += (Reaction(rolls[1]) + lineBreak)
 
 	## Supernatural Marks
+	result += 'Many sorcerers have a subtle but telling physical trait that sets them apart from other folk.'
 	result += (SupernaturalMarks(rolls[2]) + lineBreak)
 	
 	## Signs of Sorcery

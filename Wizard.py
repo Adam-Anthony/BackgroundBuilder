@@ -1,3 +1,4 @@
+# Preamble is not finished.
 import random as rng
 import TableHelper
 lineBreak = '\n'
@@ -10,12 +11,15 @@ def WizardTables(rolls):
     result += (ClassTraining(trainRoll) + lineBreak)
     
     ## Spellbook
+    result += 'Spellbook:' + blankSpace
     result += (Spellbooks(rolls[0]) + lineBreak)
 
     ## Ambition
+    result += 'Ambition:' + blankSpace
     result += (Ambition(rolls[1]) + lineBreak)
 
     ## Eccentricity
+    result += 'Eccentricity:' + blankSpace
     result += (Eccentricity(rolls[2]) + lineBreak)
     
     return result
