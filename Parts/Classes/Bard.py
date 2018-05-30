@@ -1,6 +1,6 @@
 ## Preamble finished
 import random as rng
-import TableHelper
+import Parts.TableHelper as TableHelper
 lineBreak = '\n'
 blankSpace = ' '
 def BardTables(rolls):
@@ -8,49 +8,37 @@ def BardTables(rolls):
     
     trainRoll = rng.randint(1,6)
     result += (ClassTraining(trainRoll) + lineBreak)
-
+    
     result += 'Your defining work, spoken about for years. Perhaps a work in progress, or a staple of your performance. ' 
     result += (DefiningWork(rolls[0]) + lineBreak)
-
+    
     result += 'Any bard knows an instrument\'s entertainment value is as important as the music it plays. It might not be your only instrument, but it\'s a star. '
     result += (Instrument(rolls[1]) + lineBreak)
-
+    
     result += 'Almost every bard has suffered at least one bad experience in front of an audience. '
     result += (Embarrassments(rolls[2]) + lineBreak)
-
+    
     return result
 
 def DefiningWork(roll):
-    if roll == 1:
-        result = '\"The Three Flambinis\", a ribald song concerning mistaken identities and unfettered desire.'
-    elif roll == 2:
-        result = '\"Waltz of the Myconids\", an upbeat tune that children in particular enjoy.'
-    elif roll == 3:
-        result = '\"Asmodeus\' Golden Arse\", a dramatic poem you claim was inspired by your personal visit to Avernus.'
-    elif roll == 4:
-        result = '\"The Pirates of Luskan\", your firsthand account of being kidnapped by sea reavers as a child.'
-    elif roll == 5:
-        result = '\"A Hoop, Two Pigeons, and a Hell Hound\", a subtle parody of an incompetent noble.'
-    elif rolls == 6:
-        result = '\"A Fool in the Abyss\", a comedic poem about a jester\'s travels among demons.'
-
-    return result
+    emb = []
+    emb += ['\"The Three Flambinis\", a ribald song concerning mistaken identities and unfettered desire.']
+    emb += ['\"Waltz of the Myconids\", an upbeat tune that children in particular enjoy.']
+    emb += ['\"Asmodeus\' Golden Arse\", a dramatic poem you claim was inspired by your personal visit to Avernus.']
+    emb += ['\"The Pirates of Luskan\", your firsthand account of being kidnapped by sea reavers as a child.']
+    emb += ['\"A Hoop, Two Pigeons, and a Hell Hound\", a subtle parody of an incompetent noble.']
+    emb += ['\"A Fool in the Abyss\", a comedic poem about a jester\'s travels among demons.']
+    return TableHelper.dSixTable(emb, roll)
 
 def Instrument(roll):
-    if roll == 1:
-        result = 'A masterfully crafted halfling fiddle.'
-    elif roll == 2:
-        result = 'A mithral horn made by elves.'
-    elif roll == 3:
-        result = 'A zither made with drow spider silk.'
-    elif roll == 4:
-        result = 'An orcish drum.'
-    elif roll == 5:
-        result = 'A wooden bullywug croak box.'
-    elif roll == 6:
-        result = 'A tinker\'s harp of gnomish design.'
-
-    return result
+    emb = []
+    emb += ['A masterfully crafted halfling fiddle.']
+    emb += ['A mithral horn made by elves.']
+    emb += ['A zither made with drow spider silk.']
+    emb += ['An orcish drum.']
+    emb += ['A wooden bullywug croak box.']
+    emb += ['A tinker\'s harp of gnomish design.']
+    return TableHelper.dSixTable(emb, roll)
 
 def Embarrassments(roll):
     emb = []

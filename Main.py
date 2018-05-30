@@ -1,7 +1,10 @@
-import LifeEvents
-import Supplementals
-import Origins
-import CharClass
+import os
+import sys
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+import Parts.LifeEvents as LifeEvents
+import Parts.Supplementals as Supplementals
+import Parts.Origins as Origins
+import Parts.CharClass as CharClass
 
 linebreak = '\n'
 blankSpace = ' '
@@ -10,7 +13,7 @@ class CharBuild():
     """docstring for main"""
     def __init__(self):
         super(CharBuild, self).__init__()
-        
+    
     def Build(self):
         ## Roll Race
         ## Roll Class
@@ -21,7 +24,7 @@ class CharBuild():
 
     def RunBuilder(self, race, clas):
         ## Race Choose
-
+        #
         ## Class Choose
         CharClass.CheckClass(clas)
         ## Origins

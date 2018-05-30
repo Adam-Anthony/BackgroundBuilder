@@ -1,6 +1,6 @@
 import random as rng
-import Supplementals as sup
-import ArrayDisassemble as ad
+import Parts.Supplementals as sup
+import Parts.ArrayDisassemble as ad
 def EventsByAge(age):
     events = 0
     if age <= 20:

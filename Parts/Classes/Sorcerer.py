@@ -1,6 +1,6 @@
 ## Preamble is not finished
 import random as rng
-import TableHelper
+import Parts.TableHelper as TableHelper
 lineBreak = '\n'
 blankSpace = ' '
 
