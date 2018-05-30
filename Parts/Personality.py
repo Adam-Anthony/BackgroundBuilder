@@ -1,24 +1,35 @@
 import Parts.TableHelper as TableHelper
+
+indentSpace = '    '
+newLine = '\n'
+
 def Traits(emb):
 	r1 = rng.randint(1,8)
 	r2 = rng.randint(1,8)
 	while r2==r1:
 		r2 = rng.randint(1,8)
 	rolls = [r1, r2]
-	print(' ')
-	foo = TableHelper.XdEightTable(emb, rolls)
+	result = TableHelper.XdEightTable(emb, rolls)
+	ret = 'Trait:' + newLine
+	ret += indentSpace + result[0] + newLine
+	ret += indentSpace + result[1] + newLine
+	return ret
 
-def Ideals(emb):
+def Ideals(emb, ideal):
 	roll = rng.randint(1,6)
-	print(' ')
-	foo = TableHelper.dSixTable(emb, roll)
+	result = 'Ideal:' + newLine
+	result += indentSpace + TableHelper.dSixTable(emb, roll) + newLine 
+	result += indentSpace + TableHelper.dSixTable(ideal, roll) + newLine
+	return result
 
 def Bonds(emb):
 	roll = rng.randint(1,6)
-	print(' ')
-	foo = TableHelper.dSixTable(emb, roll)
+	result = 'Bond:' + newLine
+	result += indentSpace + TableHelper.dSixTable(emb, roll) + newLine
+	return result
 
 def Flaws(emb):
 	roll = rng.randint(1,6)
-	print(' ')
-	foo = TableHelper.dSixTable(emb, roll)
+	result = 'Flaw:' + newLine
+	result += indentSpace + TableHelper.dSixTable(emb, roll) + newLine
+	return result

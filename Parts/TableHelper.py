@@ -14,3 +14,4 @@ def XdEightTable(values, rolls):
 	q = []
 	for x in range(0,len(rolls)):
 		q += [values[rolls[x]]]
+	return q
