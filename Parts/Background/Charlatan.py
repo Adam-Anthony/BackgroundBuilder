@@ -4,7 +4,9 @@ import Parts.TableHelper as TableHelper
 import Parts.Personality as Personality
 newLine = '\n'
 blankSpace = ' '
-def CharlatanTables():
+indentSpace = '    '
+
+def GetResults():
     result = 'Your background is a charlatan.' + newLine
     result += Decision()
     result += Trait()
@@ -74,7 +76,7 @@ def Schemes():
 	emb += ['I put on new identities like clothes.']
 	emb += ['I run sleight-of-hand cons on street corners.']
 	emb += ['I convince people that worthless junk is worth their hard-earned money.']
-	return ('Favorite Scheme:' + newLine + TableHelper.dSixTable(emb, roll) + newLine)
+	return ('Favorite Scheme:' + newLine + indentSpace + TableHelper.dSixTable(emb, roll) + newLine)
 
 def Decision():
 	roll = rng.randint(1,6)

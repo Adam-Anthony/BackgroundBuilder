@@ -4,7 +4,8 @@ import Parts.TableHelper as TableHelper
 import Parts.Personality as Personality
 newLine = '\n'
 blankSpace = ' '
-def AcolyteTables():
+
+def GetResults():
     result = 'Your background is an acolyte.' + newLine
     result += Decision()
     result += Trait()
