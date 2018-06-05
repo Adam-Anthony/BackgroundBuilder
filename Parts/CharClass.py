@@ -54,39 +54,28 @@ def CheckClass(cc):
     result = ''
     if cc == 'Barbarian':
         result = Barbarian.BarbarianTables(rolls)
-        print(result)
     elif cc == 'Bard':
         result = Bard.BardTables(rolls)
-        print(result)
     elif cc == 'Cleric':
         result = Cleric.ClericTables(rolls)
-        print(result)
     elif cc == 'Druid':
         result = Druid.DruidTables(rolls)
-        print(result)
     elif cc == 'Fighter':
         result = Fighter.FighterTables(rolls)
-        print(result)
     elif cc == 'Monk':
         result = Monk.MonkTables(rolls)
-        print(result)
     elif cc == 'Paladin':
         result = Paladin.PaladinTables(rolls)
-        print(result)
     elif cc == 'Ranger':
         result = Ranger.RangerTables(rolls)
-        print(result)
     elif cc == 'Rogue':
         result = Rogue.RogueTables(rolls)
-        print(result)
     elif cc == 'Sorcerer':
         result = Sorcerer.SorcererTables(rolls)
-        print(result)
     elif cc == 'Warlock':
         result = Warlock.WarlockTables(rolls)
-        print(result)
     elif cc == 'Wizard':
         result = Wizard.WizardTables(rolls)
-        print(result)
-
+    #
+    return result
 ################################################################################

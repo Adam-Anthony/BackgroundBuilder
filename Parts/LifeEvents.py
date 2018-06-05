@@ -15,7 +15,7 @@ def EventsByAge(age):
         events = rng.randint(1,10)
     elif age >= 61:
         events = rng.randint(1,12)
-    RunningEvents(events)
+    return RunningEvents(events)
 
 def AgeRange():
     roll = rng.randint(1,100)
@@ -40,13 +40,18 @@ def AgeRange():
         result += '61 years or older.'
         age = 65
 
-    print(result)
-    EventsByAge(age)
+    result += '\n'
+    result += EventsByAge(age)
+    return result
 
 def RunningEvents(events):
-    z = False
+    luvVal = False
+    result = ''
     for i in range(0,events):
-        z = EventsTable(z)
+        z = EventsTable(luvVal)
+        result += z[0]
+        luvVal = z[1]
+    return result
 
 def EventsTable(luvVal):
     roll = rng.randint(1,100)
@@ -123,8 +128,8 @@ def EventsTable(luvVal):
         result = '    Something truly strange happened to you.\n'
         ## Roll on the Weird Stuff table
         result += WeirdStuff()
-    print(result)
-    return luv
+    q = [result, luv]
+    return q
 
 ## Secondary Tables
 def Adventures():

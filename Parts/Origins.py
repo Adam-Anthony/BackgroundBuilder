@@ -14,9 +14,9 @@ class Parents():
             known = True
         elif roll == 20:
             response = 'You do not know who your parents were.'
-        print(response)
         if known:
-            self.Nonhuman()
+            response += self.Nonhuman()
+        return response
 
     def HalfElf(self):
         roll = rng.randint(1,8)
@@ -29,7 +29,7 @@ class Parents():
             response = 'One parent was a human and the other was a half-elf.'
         elif roll == 8:
             response = 'Both parents were half-elves.'
-        print(response)
+        return response
 
     def HalfOrc(self):
         roll = rng.randint(1,8)
@@ -42,7 +42,7 @@ class Parents():
             response = 'One parent was a human and the other was a half-orc.'
         elif roll == 8:
             response = 'Both parents were half-orcs.'
-        print(response)
+        return response
 
     def Tiefling(self):
         roll = rng.randint(1,8)
@@ -55,15 +55,17 @@ class Parents():
             response = 'One parent was a tiefling and the other was a devil.'
         elif roll == 8:
             response = 'One parent was a human and the other was a devil.'
-        print(response)
+        return response
 
     def Nonhuman(self):
+        result = ''
         if self.race=='half-elf':
-            self.HalfElf()
+            result = self.HalfElf()
         if self.race=='half-orc':
-            self.HalfOrc()
+            result = self.HalfOrc()
         if self.race=='tiefling':
-            self.Tiefling()
+            result = self.Tiefling()
+        return result
 
 def Birthplace():
     roll = rng.randint(1,100)
@@ -114,7 +116,7 @@ def Birthplace():
         response += 'on an Inner Plane of your choice.'
     elif roll == 100:
         response += 'on an Outer Plane of your choice.'
-    print(response)
+    return response
 
 def NumberOfSiblings():
     roll = rng.randint(1,10)

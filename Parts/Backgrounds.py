@@ -15,7 +15,7 @@ import Parts.Background.Sailor as Sailor
 import Parts.Background.Soldier as Soldier
 
 import Parts.Background.Urchin as Urchin
-
+import random as rng
 ### Background is in first person
 ### ### Should we change it to third person to match classes
 ### ### Should we change classes to first person
@@ -48,4 +48,36 @@ def RunBackgrounds(back):
 		g = Soldier
 	elif back == 'urchin':
 		g = Urchin
-	print(g.GetResults())
+	return g.GetResults()
+
+def ChooseRandom():
+	roll = rng.randint(1,13)
+	result = ''
+	if roll == 1:
+		result = 'acolyte'
+	elif roll == 2:
+		result = 'charlatan'
+	elif roll == 3:
+		result = 'criminal'
+	elif roll == 4:
+		result = 'entertainer'
+	elif roll == 5:
+		result = 'folk hero'
+	elif roll == 6:
+		result = 'guild artisan'
+	elif roll == 7:
+		result = 'hermit'
+	elif roll == 8:
+		result = 'noble'
+	elif roll == 9:
+		result = 'outlander'
+	elif roll == 10:
+		result = 'sage'
+	elif roll == 11:
+		result = 'sailor'
+	elif roll == 12:
+		result = 'soldier'
+	elif roll == 13:
+		result = 'urchin'
+	#
+	return RunBackgrounds(result)
