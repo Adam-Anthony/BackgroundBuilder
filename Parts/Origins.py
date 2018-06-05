@@ -1,24 +1,103 @@
 import random as rng
 lineBreak = '\n'
+indentSpace = '    '
 class Parents():
 	race = 'aaaa'
+	known = False
 	def __init__(self, race):
 		super(Parents, self).__init__()
 		self.race = race
 
 	def KnownParents(self):
 		response = ''
-		known = False
 		roll = rng.randint(1,20)
 		if roll < 20:
 			response = 'You know who your parents are or were.'
-			known = True
+			self.known = True
 		elif roll == 20:
 			response = 'You do not know who your parents were.'
-		if known:
+		if self.known:
 			response += self.Nonhuman()
+		response += lineBreak
+		response += self.Family()
 		return response + lineBreak
 
+	def Family(self):
+		response = 'Family: '
+		if self.known == False:
+			roll = rng.randint(1,35)
+		else:
+			roll = rng.randint(1,100)
+		parentMissing = False
+		bothMissing = False
+		#
+		#
+		if roll == 1:
+			response += 'None.'
+			parentMissing = True
+			bothMissing = True
+		elif roll == 2:
+			response += 'Institution, such as an asylum.'
+			parentMissing = True
+			bothMissing = True
+		elif roll == 3:
+			response += 'Temple.'
+			parentMissing = True
+			bothMissing = True
+		elif roll >=4 and roll <= 5:
+			response += 'Orphanage.'
+			parentMissing = True
+			bothMissing = True
+		elif roll >=6 and roll <= 7:
+			response += 'Guardian.'
+			parentMissing = True
+			bothMissing = True
+		elif roll >= 8 and roll <= 15:
+			response += 'Paternal or maternal aunt, uncle, or both; or extended family such as a tribe or clan.'
+			parentMissing = True
+			bothMissing = True
+		elif roll >= 16 and roll <= 25:
+			response += 'Paternal or maternal grandparent(s).'
+			parentMissing = True
+			bothMissing = True
+		elif roll >= 26 and roll <= 35:
+			response += 'Adoptive family (same or different race).'
+			parentMissing = True
+			bothMissing = True
+		elif roll >= 36 and roll <= 55:
+			response += 'Single father or stepfather.'
+			parentMissing = True
+		elif roll >= 56 and roll <= 75:
+			response += 'Single mother or stepmother.'
+			parentMissing = True
+		elif roll >= 76 and roll <= 100:
+			response += 'Mother and father.'
+		if self.known == False:
+			response += lineBreak
+		elif parentMissing:
+			response += lineBreak + indentSpace
+			if bothMissing:
+				response += self.AbsentParents(False) + lineBreak + indentSpace
+			response += self.AbsentParents(True) + lineBreak
+		
+		return response
+	#
+	def AbsentParents(self, both):
+		response = ''
+		other = ''
+		if both:
+			other = 'other '
+		roll = rng.randint(1,4)
+		if roll == 1:
+			response = 'Your '+ other +'parent died.'
+			#Roll on the cause of death supplemental table
+		elif roll == 2:
+			response = 'Your '+ other +'parent was imprisoned, enslaved, or otherwise taken away.'
+		elif roll == 3:
+			response = 'Your '+ other +'parent abandoned you.'
+		elif roll == 4:
+			response = 'Your '+ other +'parent disappeared to an unknown fate.'
+		return response
 	def HalfElf(self):
 		roll = rng.randint(1,8)
 		response = ''
@@ -177,3 +256,13 @@ class FamilyLife():
 	def ChildhoodMemories(self):
 		roll = rng.randint(1,6) + rng.randint(1,6) + rng.randint(1,6)
 		## Have to then add a Cha modifier.
+
+##Family
+
+##AbsentParent
+
+##Family Lifestyle
+
+##Childhood Home
+
+##Childhood Memories
