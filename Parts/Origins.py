@@ -243,18 +243,69 @@ def Siblings():
 
 class FamilyLife():
 	"""docstring for Family"""
-	def __init__(self):
+	modifier = 0
+	chaMod = 0
+	def __init__(self, chaMod):
 		super(FamilyLife, self).__init__()
-	def Family(self):
-		roll = rng.randint(1,100)
-	def AbsentParent(self):
-		roll = rng.randint(1,4)
+		self.chaMod = chaMod
+	#
+	def getResults(self):
+		response = self.FamilyLifestyle()
+		response += self.ChildhoodHome()
+		## response += self.ChildhoodMemories()
+		return response
+	#
 	def FamilyLifestyle(self):
 		roll = rng.randint(1,6) + rng.randint(1,6) + rng.randint(1,6)
-	def ChildhoodHome(self, modif):
-		roll = rng.randint(1,100) + modif
+		result = 'Lifestyle: '
+		if roll == 3:
+			result += 'Wretched'
+			self.modifier = -40
+		elif roll >= 4 and roll <= 5:
+			result += 'Squalid'
+			self.modifier = -20
+		elif roll >= 6 and roll <= 8:
+			result += 'Poor'
+			self.modifier = -10
+		elif roll >= 9 and roll <= 12:
+			result += 'Modest'
+			self.modifier = 0
+		elif roll >= 13 and roll <= 15:
+			result += 'Comfortable'
+			self.modifier = 10
+		elif roll >=16 and roll <= 17:
+			result += 'Wealthy'
+			self.modifier = 20
+		elif roll == 18:
+			result += 'Aristocratic'
+			self.modifier = 40
+		return result + lineBreak
+	#
+	def ChildhoodHome(self):
+		roll = rng.randint(1,100) + self.modifier
+		result = 'Childhood Home: '
+		if roll <= 0:
+			result += 'On the streets.'
+		elif roll >= 1 and roll <= 20:
+			result += 'Rundown shack.'
+		elif roll >= 21 and roll <= 30:
+			result += 'No permanent residence; you moved around a lot.'
+		elif roll >= 31 and roll <= 40:
+			result += 'Encampment or village in the wilderness.'
+		elif roll >= 41 and roll <= 50:
+			result += 'Apartment in a rundown neighborhood.'
+		elif roll >= 51 and roll <= 70:
+			result +=  'Small house.'
+		elif roll >= 71 and roll <= 90:
+			result += 'Large house.'
+		elif roll >= 91 and roll <= 110:
+			result += 'Mansion.'
+		elif roll >= 111:
+			result += 'Palace or Castle.'
+		return result + lineBreak
+	#
 	def ChildhoodMemories(self):
-		roll = rng.randint(1,6) + rng.randint(1,6) + rng.randint(1,6)
+		roll = rng.randint(1,6) + rng.randint(1,6) + rng.randint(1,6) + self.chaMod
 		## Have to then add a Cha modifier.
 
 ##Family

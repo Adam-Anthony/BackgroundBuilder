@@ -21,24 +21,32 @@ class CharBuild():
     #
     def Build(self):
         ## Roll Race
+        race = Race.RandomRaceWeighted()
         ## Roll Class
-        self.RunBuilder('human', 'Cleric', 'noble')
-    #
+        clas = CharClass.RollClassNotWeighted()
+        print(clas)
+        ## Roll Background
+        back = Backgrounds.ChooseRandom()
+        self.RunBuilder(race, clas, back)
+    # Race Class 
     def BuildRC(self, race, clas):
-        self.RunBuilder(race, clas, 'noble')
-    #
+        back = Backgrounds.ChooseRandom()
+        self.RunBuilder(race, clas, back)
+    # Race Class Background
     def BuildRCB(self, race, clas, back):
         self.RunBuilder(race, clas, back)
-    #
+    #      Class Background
     def BuildCB(self, clas, back):
-        self.RunBuilder('human', clas, back)
+        race = Race.RandomRaceWeighted()
+        self.RunBuilder(race, clas, back)
     #
     def RunBuilder(self, race, clas, back):
+        # Need to intilizae a way to get a cha mod from user.
+        chaMod = 0
+        #
         result = ''
-        ## Race Choose
-        race = Race.RandomRaceWeighted()
-        result += race
-        result += lineBreak
+        #    
+        ## Race Weight and Height
         #
         ## Background Choose
         result += Backgrounds.RunBackgrounds(back)
@@ -50,18 +58,21 @@ class CharBuild():
         ## Origins
         parent = Origins.Parents(race)
         result += parent.KnownParents()
+        #
         result += Origins.Birthplace()
         result += Origins.NumberOfSiblings(race)
+        #
+        family = Origins.FamilyLife(chaMod)
+        result += family.getResults()
         result += lineBreak
         ## Life Events
         ## Generates an age range, doesn't take in an age
         result += LifeEvents.AgeRange()
-        result += lineBreak
         print(result)
         popResult = result + lineBreak + lineBreak + 'Would you like to save this character?'
         ##
         ## We can probably make that question look better.
-        buttonRes = ctypes.windll.user32.MessageBoxW(0,popResult,'Your Character', 4)
+        buttonRes = ctypes.windll.user32.MessageBoxW(0,popResult,'Your Character, the ' + race + ' ' + clas, 4)
         if buttonRes == 6:
             newPath = fileLocation + fileName + fileType
             if os.path.exists(newPath):

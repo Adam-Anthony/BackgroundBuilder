@@ -29,25 +29,25 @@ def RollClassNotWeighted():
     elif roll == 3:
             characterClass = 'Cleric'
     elif roll == 4:
-        characterClass == 'Druid'
+        characterClass = 'Druid'
     elif roll == 5:
-        characterClass == 'Fighter'
+        characterClass = 'Fighter'
     elif roll == 6:
-        characterClass == 'Monk'
+        characterClass = 'Monk'
     elif roll == 7:
-        characterClass == 'Paladin'
+        characterClass = 'Paladin'
     elif roll == 8:
-        characterClass == 'Ranger'
+        characterClass = 'Ranger'
     elif roll == 9:
-        characterClass == 'Rogue'
+        characterClass = 'Rogue'
     elif roll == 10:
-        characterClass == 'Sorcerer'
+        characterClass = 'Sorcerer'
     elif roll == 11:
-        characterClass == 'Warlock'
+        characterClass = 'Warlock'
     elif roll == 12:
-        characterClass == 'Wizard'
-    
-    CheckClass(characterClass)
+        characterClass = 'Wizard'
+    #
+    return characterClass
 
 def CheckClass(cc):
     rolls = [rng.randint(1,6), rng.randint(1,6), rng.randint(1,6)]

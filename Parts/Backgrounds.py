@@ -80,4 +80,4 @@ def ChooseRandom():
 	elif roll == 13:
 		result = 'urchin'
 	#
-	return RunBackgrounds(result)
+	return result
