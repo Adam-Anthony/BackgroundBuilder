@@ -79,3 +79,30 @@ def CheckClass(cc):
     #
     return result
 ################################################################################
+def PrintOptions():
+    print('- Barbarian')
+    print('- Bard')
+    print('- Cleric')
+    print('- Druid')
+    print('- Fighter')
+    print('- Monk')
+    print('- Paladin')
+    print('- Ranger')
+    print('- Rogue')
+    print('- Sorcerer')
+    print('- Warlock')
+    print('- Wizard')
+
+def CheckInput(clas):
+    Real = False
+    clas = clas[0].upper() + clas[1:].lower()
+    if clas == 'Barbarian' or clas == 'Bard' or clas == 'Cleric':
+        Real = True
+    elif clas == 'Druid' or clas == 'Fighter' or clas == 'Monk':
+        Real = True
+    elif clas == 'Paladin' or clas == 'Ranger' or clas == 'Rogue':
+        Real = True
+    elif clas == 'Sorcerer' or clas == 'Warlock' or clas == 'Wizard':
+        Real = True
+    #
+    return Real

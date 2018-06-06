@@ -64,3 +64,25 @@ def RandomRaceWeighted():
 	elif roll >= 97:
 		result = 'tiefling'
 	return result
+
+def PrintOptions():
+	print('- Dwarf')
+	print('- Elf')
+	print('- Halfling')
+	print('- Human')
+	print('- Dragonborn')
+	print('- Gnome')
+	print('- Half-Elf')
+	print('- Half-Orc')
+	print('- Tiefling')
+
+def CheckInput(race):
+	Real = False
+	race = race.lower()
+	if race == 'dwarf' or race == 'elf' or race == 'halfling':
+		Real = True
+	elif race == 'human' or race == 'dragonborn' or race == 'gnome':
+		Real = True
+	elif race == 'half-elf' or race == 'half-orc' or race == 'tiefling':
+		Real = True
+	return Real

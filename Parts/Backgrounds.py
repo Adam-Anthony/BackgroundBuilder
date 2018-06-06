@@ -81,3 +81,37 @@ def ChooseRandom():
 		result = 'urchin'
 	#
 	return result
+
+def PrintOptions():
+	print('- Acolyte')
+	print('- Charlatan')
+	print('- Criminal')
+	print('- Entertainer')
+	print('- Folk Hero')
+	print('- Guild Artisan')
+	print('- Hermit')
+	print('- Noble')
+	print('- Outlander')
+	print('- Sage')
+	print('- Sailor')
+	print('- Solider')
+	print('- Urchin')
+
+def CheckInput(back):
+	Real = False
+	back = back.lower()
+	if back == 'acolyte' or back == 'charlatan':
+		Real = True
+	elif back == 'criminal' or back == 'entertainer':
+		Real = True
+	elif back == 'folk hero' or back == 'guild artisan':
+		Real = True
+	elif back == 'hermit' or back == 'noble':
+		Real = True
+	elif back == 'outlander' or back == 'sage':
+		Real = True
+	elif back == 'sailor' or back == 'soldier':
+		Real = True
+	elif back == 'urchin':
+		Real = True
+	return Real

@@ -27,23 +27,31 @@ class CharBuild():
         print(clas)
         ## Roll Background
         back = Backgrounds.ChooseRandom()
-        self.RunBuilder(race, clas, back)
-    # Race Class 
-    def BuildRC(self, race, clas):
-        back = Backgrounds.ChooseRandom()
-        self.RunBuilder(race, clas, back)
-    # Race Class Background
-    def BuildRCB(self, race, clas, back):
-        self.RunBuilder(race, clas, back)
-    #      Class Background
-    def BuildCB(self, clas, back):
-        race = Race.RandomRaceWeighted()
-        self.RunBuilder(race, clas, back)
-    #
-    def RunBuilder(self, race, clas, back):
-        # Need to intilizae a way to get a cha mod from user.
-        chaMod = 0
-        #
+        self.RunBuilder(race, clas, back, 0)
+    # Build Given
+    def BuildGiven(self, race, clas, back, chaMod):
+        if (race == ''):
+            race = Race.RandomRaceWeighted()
+        else:
+            race = race.lower()
+        ##
+        if (clas == ''):
+            clas = CharClass.RollClassNotWeighted()
+        else:
+            clas = clas[0].upper() + clas[1:].lower()
+        ##
+        if (back == ''):
+            back = Backgrounds.ChooseRandom()
+        else:
+            back = back.lower()
+        ##
+        if (chaMod == ''):
+            chaMod = 0
+        else:
+            chaMod = int(chaMod)
+        ##
+        self.RunBuilder(race, clas, back, chaMod)
+    def RunBuilder(self, race, clas, back, chaMod):
         result = ''
         #    
         ## Race Weight and Height
@@ -65,6 +73,7 @@ class CharBuild():
         family = Origins.FamilyLife(chaMod)
         result += family.getResults()
         result += lineBreak
+        result += lineBreak
         ## Life Events
         ## Generates an age range, doesn't take in an age
         result += LifeEvents.AgeRange()
@@ -83,6 +92,7 @@ class CharBuild():
                         num = '0' + str(count)
                     else:
                         num = str(count)
+                    #
                     newPath = fileLocation + fileName + num + fileType
                     if os.path.exists(newPath):
                         count += 1
@@ -100,7 +110,7 @@ def MultipleRuns(num):
         charBuild.Build()
         print('------------------------------------------------------')
 
-def MultipleRunsGiven(race, clas, num):
+def MultipleRunsGiven(race, clas, back, chaMod, num):
     charBuild = CharBuild()
     for i in range (0, num):
-        charBuild.BuildGiven(race, clas)
+        charBuild.BuildGiven(race, clas, back, chaMod)
