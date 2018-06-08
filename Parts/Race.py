@@ -78,11 +78,14 @@ def PrintOptions():
 
 def CheckInput(race):
 	Real = False
+	if len(race.split('-')) == 2:
+		tempRace = race.split('-')
+		race = tempRace[0] + tempRace[1]
 	race = race.lower()
 	if race == 'dwarf' or race == 'elf' or race == 'halfling':
 		Real = True
 	elif race == 'human' or race == 'dragonborn' or race == 'gnome':
 		Real = True
-	elif race == 'half-elf' or race == 'half-orc' or race == 'tiefling':
+	elif race == 'halfelf' or race == 'halforc' or race == 'tiefling':
 		Real = True
 	return Real

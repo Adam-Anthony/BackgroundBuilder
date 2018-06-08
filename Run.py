@@ -13,7 +13,9 @@ while breaker:
 	race = input('Race: ')
 	if race == '?':
 		Race.PrintOptions()
-	elif Race.CheckInput(race) or race == '':
+	elif race == '':
+		breaker = False
+	elif Race.CheckInput(race):
 		breaker = False
 	else:
 		print('Input not accepted. Type ? for help with options.')
@@ -23,7 +25,9 @@ while breaker:
 	clas = input('Class: ')
 	if clas == '?':
 		CharClass.PrintOptions()
-	elif CharClass.CheckInput(clas) or clas == '':
+	elif clas == '':
+		breaker = False
+	elif CharClass.CheckInput(clas):
 		breaker = False
 	else:
 		print('Input not accepted. Type ? for help with options.')
@@ -33,7 +37,9 @@ while breaker:
 	back = input('Background: ')
 	if back == '?':
 		Backgrounds.PrintOptions()
-	elif Backgrounds.CheckInput(back) or back == '':
+	elif back == '':
+		breaker = False
+	elif Backgrounds.CheckInput(back):
 		breaker = False
 	else:
 		print('Input not accepted. Type ? for help with options.')

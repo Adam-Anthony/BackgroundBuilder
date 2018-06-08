@@ -34,6 +34,10 @@ class CharBuild():
             race = Race.RandomRaceWeighted()
         else:
             race = race.lower()
+            if race == 'halforc':
+                race = 'half-orc'
+            elif race == 'halfelf':
+                race = 'half-elf'
         ##
         if (clas == ''):
             clas = CharClass.RollClassNotWeighted()
