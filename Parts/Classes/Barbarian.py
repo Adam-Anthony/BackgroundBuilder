@@ -35,12 +35,12 @@ def PersonalTotems(roll):
 ## Thinking about accepting arguments because all classes use the result of 3 d6 rolls.
 def Tattoos(roll):
     emb = []
-    emb += 'The wings of an eagle are spread wide across your upper back.'
-    emb += 'Etched on the backs of your hands are the paws of a cave bear.'
-    emb += 'The symbols of your clan are displayed in viny patterns along your arms.'
-    emb += 'The antlers of an elk are inked across your back.'
-    emb += 'Images of your spirit animal are tattooed along your weapon arm and hand.'
-    emb += 'The eyes of a wolf are marked on your back to help yu see and ward off evil spirits.'
+    emb += ['The wings of an eagle are spread wide across your upper back.']
+    emb += ['Etched on the backs of your hands are the paws of a cave bear.']
+    emb += ['The symbols of your clan are displayed in viny patterns along your arms.']
+    emb += ['The antlers of an elk are inked across your back.']
+    emb += ['Images of your spirit animal are tattooed along your weapon arm and hand.']
+    emb += ['The eyes of a wolf are marked on your back to help yu see and ward off evil spirits.']
     return TableHelper.dSixTable(emb, roll)
 
 def Superstitions(roll):

@@ -71,11 +71,11 @@ def SignsOfSorcery(roll):
 def ClassTraining(roll):
 	emb = []
 	emb += ['when you were born, all the water in the house froze solid, the milk spoiled, or all the iron turned to copper. Your family is convinced that this event was a harbringer of stranger things to come for you.']
-	emb += ['You suffered a terrible emotional or physical strain, which brought forth your latent magical power. You have fought to control it ever since.']
-	emb += ['Your immediate family never spoke of your ancestors, and when you asked, they would change the subject. It wasn\'t until you started displaying strange talents that the full truth of your heritage came out.']
-	emb += ['When a monster threatened one of your friends, you became filled with anxiety. You lashed out instinctively and blasted the wretched thing with a force that came from within you.']
+	emb += ['you suffered a terrible emotional or physical strain, which brought forth your latent magical power. You have fought to control it ever since.']
+	emb += ['your immediate family never spoke of your ancestors, and when you asked, they would change the subject. It wasn\'t until you started displaying strange talents that the full truth of your heritage came out.']
+	emb += ['when a monster threatened one of your friends, you became filled with anxiety. You lashed out instinctively and blasted the wretched thing with a force that came from within you.']
 	## Want to roll for this stranger.
-	emb += ['Sensing something special in you, a stranger taught you how to control your gift.']
-	emb += ['After you escaped from a magical conflagration, you realized that though you were unharmed, you were not unchanged. You began to exhibit unusual abilities that you are just beginning to understand.']
+	emb += ['sensing something special in you, a stranger taught you how to control your gift.']
+	emb += ['after you escaped from a magical conflagration, you realized that though you were unharmed, you were not unchanged. You began to exhibit unusual abilities that you are just beginning to understand.']
 	result =  'You became a sorcerer because ' + TableHelper.dSixTable(emb, roll) + lineBreak
 	return result

@@ -59,9 +59,9 @@ def Benefactors(roll):
 
 def ClassTraining(roll):
     emb = []
-    emb += ['You have always been nimble and quick of wit, so you decided to use those talents to help you make your way in the world.']
-    emb += ['An assassin or a thief wronged you, so you focused your training on mastering the skills of your enemy to better combat foes of that sort.']
-    emb += ['An experienced rogue saw something in you and taught you several useful tricks.']
+    emb += ['you have always been nimble and quick of wit, so you decided to use those talents to help you make your way in the world.']
+    emb += ['an assassin or a thief wronged you, so you focused your training on mastering the skills of your enemy to better combat foes of that sort.']
+    emb += ['an experienced rogue saw something in you and taught you several useful tricks.']
     emb += ['you decided to turn your natural lucky streak into the basis of a career, though you still realize that improving your skills is essential.']
     emb += ['you took up with a group of ruffians who showed you how to get what you want through sneakiness rather than direct confrontation.']
     emb += ['you are a sucker for a shiny bauble or a sack of coins, as long as you can get your hands on it without risking life and limb.']
