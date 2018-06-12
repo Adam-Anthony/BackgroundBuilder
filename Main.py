@@ -103,6 +103,7 @@ class CharBuild():
                     else:
                         breaker = False
             #
+            result = 'Your Character, the ' + race + ' ' + clas + '\n\n' + result
             saved = open(newPath, 'w')
             saved.write(result)
             saved.close()
