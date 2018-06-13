@@ -328,7 +328,7 @@ def Tragedies():
     roll = rng.randint(1,12)
     result = indentSpace
     if roll == 1 or roll == 2:
-        result += 'A family member or a close friend died.'
+        result += 'A family member or a close friend died.' + blankSpace
         ## Roll on the Cause of Death table
         result += sup.CauseOfDeath()
     elif roll == 3:
@@ -337,8 +337,8 @@ def Tragedies():
         result += 'You lost all your possessions in a disaster, and you had to rebuild your life.'
     elif roll == 5:
         subroll = rng.randint(1,6)
-        result += 'You were imprisoned for a crime you didn\'t commit and spent ' + str(subroll)
-        result += ' years at hard labor, in jail, or shackled to an oar in a slave gallery.'
+        result += 'You were imprisoned for a crime you didn\'t commit and spent ' + str(subroll) + blankSpace
+        result += 'years at hard labor, in jail, or shackled to an oar in a slave gallery.'
     elif roll == 6:
         result += 'War ravaged your home community, reducing everything to rubble and ruin. In the aftermath, you either helped your town rebuild moved somewhere else.'
     elif roll == 7:
@@ -346,7 +346,7 @@ def Tragedies():
     elif roll == 8:
         result += 'A terrible blight in your home community caused crops to fail, and many starved. You lost a sibling or some other family member.'
     elif roll == 9:
-        result += 'You did something that brought terrible shame to you in the eyes of your family. You might have been involved in a scandal, dabbled in dark magic, or offended someone important.'
+        result += 'You did something that brought terrible shame to you in the eyes of your family. You might have been involved in a scandal, dabbled in dark magic, or offended someone important.' + blankSpace
         result += 'The attitude of your family members toward you becomes indifferent at best, though they might eventually forgive you.'
     elif roll == 10:
         result += 'For a reason you were never told, you were exiled from your community. You then either wandered in the wilderness for a time or promptly found a new place to live.'
